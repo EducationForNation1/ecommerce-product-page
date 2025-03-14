@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Product Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="product-container">
+        <!-- Product Image -->
+        <div class="product-image">
+            <img id="mainImage" src="./images/image1.jpeg" alt="Product Image">
+            <div class="thumbnails">
+                <img src="./images/image2.jpeg" onclick="changeImage(this)">
+                <img src="./images/image3.jpeg" onclick="changeImage(this)">
+                <img src="./images/image4.jpeg" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+            <h2>Stylish Sneakers</h2>
+            <p class="price">$<span id="price">50</span></p>
+            <p>Choose Color:</p>
+            <div class="color-options">
+                <span class="color-option" style="background: red;" onclick="changeColor('red')"></span>
+                <span class="color-option" style="background: blue;" onclick="changeColor('blue')"></span>
+                <span class="color-option" style="background: black;" onclick="changeColor('black')"></span>
+            </div>
+
+            <p>Choose Size:</p>
+            <select id="sizeSelect">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+
+            <p>Quantity:</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(-1)">-</button>
+                <span id="quantity">1</span>
+                <button onclick="updateQuantity(1)">+</button>
+            </div>
+
+            <button class="cart-btn" onclick="addToCart()">Add to Cart</button>
+            <p id="cart-message" class="hidden">Added to cart!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
